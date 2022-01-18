@@ -55,7 +55,7 @@ describe('9 - Implemente os casos de teste da função `getCharacter`', () => {
     // Teste se os parâmetros não são Case Sensitive.
     expect(getCharacter('Brienne')).toEqual(getCharacter('brienne'));
     // Teste se ao passar um nome que não está na tabela, a função retorna undefined.
-    expect(getCharacter('Naíra')).toBeUndefined();
+    expect(getCharacter('Naíra')).toBeUndefined(); 
 
   });
 });
