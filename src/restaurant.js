@@ -98,6 +98,6 @@ const createMenu = (objeto) => {
   };
   return restaurant;
 };
-const myRestaurant = createMenu({ food: { coxinha: 3.9, sopa: 9.9 }, drink: { agua: 3.9, cerveja: 6.9 } });
+createMenu({ food: { coxinha: 3.9, sopa: 9.9 }, drink: { agua: 3.9, cerveja: 6.9 } });
 
 module.exports = createMenu;
