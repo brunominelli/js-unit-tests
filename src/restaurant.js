@@ -84,13 +84,20 @@ const createMenu = (objeto) => {
     fetchMenu: () => objeto,
     consumption: [],
     order: (item) => restaurant.consumption.push(item),
+    pay: () => {
+      let sum = 0;
+      restaurant.consumption.forEach((item, index) => {
+        const itemConsumption = restaurant.consumption[index];
+        const menu = restaurant.fetchMenu();
+        if (menu.food[itemConsumption] || menu.drink[itemConsumption]) {
+          sum += menu.food[itemConsumption] || menu.drink[itemConsumption];
+        }
+      });
+      return sum;
+    },
   };
   return restaurant;
 };
 const myRestaurant = createMenu({ food: { coxinha: 3.9, sopa: 9.9 }, drink: { agua: 3.9, cerveja: 6.9 } });
-myRestaurant.order('coxinha');
-myRestaurant.order('água');
-myRestaurant.order('sopa');
-myRestaurant.order('sashimi');
-console.log(myRestaurant.consumption);
+
 module.exports = createMenu;
